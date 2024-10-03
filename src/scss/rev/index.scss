@@ -1,0 +1,94 @@
+.rev {
+  display: flex;
+  // flex-wrap: wrap;
+  gap: 1.9rem;
+  font-size: clamp(.64rem, 2vw, .8rem);
+  margin-bottom: 1.9rem;
+
+  &__item {
+    @include df-sb;
+    background-color: $white;
+    border-radius: $border-radius;
+
+    width: 100%;
+
+    padding: 1.7rem 2rem;
+  }
+
+
+  &__desc,
+  &__image {
+    flex: 1;
+  }
+
+  &__title {
+    color: $main-color;
+    font-size: clamp(1rem, 4vw, 1.22rem);
+  }
+
+  &__data {
+    margin: clamp(1rem, 4vw, 3rem) auto clamp(1rem, 4vw, 3.5rem)
+  }
+
+  .cash {
+    margin-bottom: .4rem;
+  }
+
+  .cash,
+  .non-cash {
+    position: relative;
+    padding-left: 1.3rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 1rem;
+      height: 2px;
+    }
+  }
+
+  & .expenses {
+    button {
+      background: $red;
+    }
+
+    .cash::after,
+    .non-cash::after {
+      background-color: $red
+    }
+  }
+
+  & .income {
+    button {
+      background: $green;
+    }
+
+    .cash::after,
+    .non-cash::after {
+      background-color: $green
+    }
+  }
+
+  &__button {
+    @include base-button;
+    font-size: .92rem;
+    color: $white;
+    position: relative;
+    padding: .66rem clamp(1rem, 3vw, 1.6rem) .66rem clamp(2.4rem, 3vw, 2.9rem);
+    border-radius: $buttons-border-radius;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      width: 1.07rem;
+      height: 1.07rem;
+      background-image: url('../images/action-buttons.svg');
+    }
+  }
+}

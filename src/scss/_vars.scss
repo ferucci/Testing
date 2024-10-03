@@ -1,0 +1,23 @@
+$base-font-size: clamp(.7rem, 2vw, .88rem);
+
+$bgcolor: #F1F4F8;
+$aside-items-color: #53627B;
+$aside-items-accent-color: #3D5EB4;
+$aside-dropdown-items-color: #788398;
+
+$main-color: #252F40;
+
+$white: white;
+$green: #1FCA45;
+$red: #CA1F29;
+
+$border-radius: 1.07rem;
+$main-padding: 1rem;
+
+$buttons-padding: .52rem 1.5rem;
+
+$buttons-border-radius: .7rem;
+
+%font {
+  font-family: 'SFUIText-Light', sans-serif;
+}

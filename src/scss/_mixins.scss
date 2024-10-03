@@ -1,0 +1,48 @@
+@mixin ph {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin df-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin df-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+// aside
+@mixin fs-item-list {
+  font: inherit;
+  color: $aside-items-color;
+}
+
+@mixin position-items-list {
+  @include fs-item-list;
+
+  li>a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+
+}
+
+@mixin base-button {
+  padding: 0;
+  border: none;
+
+  cursor: pointer;
+}
+
+
+@mixin filter-button {
+  @include df-center;
+  @include base-button;
+  background: transparent;
+}

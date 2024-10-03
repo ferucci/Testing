@@ -1,0 +1,132 @@
+$subtitle: #99A5BB;
+$sidebar-padding-top: 1.56rem;
+$sidebar-padding-bottom: 2rem;
+
+.sidebar {
+  max-width: 17rem;
+  border-radius: $border-radius;
+  background-color: $white;
+  color: $aside-items-color;
+
+  padding: $sidebar-padding-top 1rem $sidebar-padding-bottom 1.13rem;
+  height: calc(min(100vmin, 100vmin) - $main-padding * 2);
+
+  a:active,
+  a:hover {
+    color: $aside-items-accent-color;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - ($sidebar-padding-top + $sidebar-padding-bottom));
+    justify-content: space-between;
+  }
+
+  &__item {
+    border: 1px solid transparent;
+    transition: height .3s ease;
+  }
+
+  &__item:not([data-dropdown]) {
+    margin-bottom: 1.4rem;
+  }
+
+  &__title {
+    padding-left: .7rem
+  }
+
+  &__header {
+    @include df-sb;
+    padding-left: 1.22rem;
+    margin-bottom: 1.6rem;
+
+    & a {
+      margin-top: -1rem;
+    }
+
+    & .logo {
+      width: min(100vw, 73px);
+    }
+  }
+
+  &__list {
+    @include position-items-list;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+
+    &.active {
+      color: $aside-items-accent-color;
+
+      .sidebar__link-inner {
+        border-bottom: 1px solid #3d5eb4;
+      }
+
+      .arrow-down,
+      .sidebar__link-inner {
+        svg path {
+          stroke: #3d5eb4;
+        }
+      }
+    }
+
+    & span {
+      padding-left: .77rem;
+    }
+  }
+
+  &__link-inner,
+  .arrow-down {
+    @include df-center;
+    padding-bottom: 0.5rem;
+  }
+
+  .arrow-down {
+    margin-left: auto;
+  }
+
+  .separator-text {
+    display: inline-block;
+    color: $subtitle;
+    font-size: 13px;
+    font-weight: 400;
+    color: #99A5BB;
+    margin-bottom: 1.55rem;
+  }
+
+
+  .dropdown {
+    &__list {
+      display: flex;
+      transition: all .3s ease;
+      flex-direction: column;
+      gap: .92rem;
+      font-size: .77rem;
+      letter-spacing: -.02rem;
+      padding: .7rem 0;
+
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease;
+
+    }
+
+    &__list.show {
+      max-height: 200px;
+      opacity: 1;
+    }
+
+    &__item {
+      color: $aside-dropdown-items-color;
+      width: fit-content;
+      margin: 0 auto 0 2.4rem;
+      transition: .3s all ease;
+    }
+
+  }
+
+}

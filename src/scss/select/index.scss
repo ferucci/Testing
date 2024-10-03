@@ -1,0 +1,140 @@
+$height: 41px;
+
+.select {
+  font-size: .88rem;
+  color: $main-color;
+  width: fit-content;
+  position: relative;
+  z-index: 2;
+  min-width: 13rem;
+
+  &.select-open {
+    .select__dropdown {
+      display: block;
+    }
+
+    .select__backdrop {
+      display: block;
+    }
+  }
+
+  &__input {
+    font: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: 1px solid rgba(#949CAC, 55%);
+    border-radius: .5rem;
+    padding: $buttons-padding;
+    max-width: 12rem;
+    width: 100%;
+    cursor: pointer;
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    top: $height;
+    left: 0;
+    right: 0;
+    max-height: 20rem;
+
+  }
+
+  ul.select__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    padding: 1rem;
+    background-image: url(../../images/Rectangle.png) no-repeat -31px -17px/cover;
+    min-width: 13rem;
+  }
+
+  &__backdrop {
+    position: fixed;
+    display: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: transparent;
+    z-index: -1;
+  }
+
+  &__item {
+    font: inherit;
+    font-size: 1rem;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(#788398, 21%);
+    position: relative;
+    width: fit-content;
+
+
+    // &.selected {
+    //   background-color: #3D5EB4;
+    // }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__item-value {
+    padding-left: 1.5rem;
+  }
+
+  &__item-value::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    background-image: url('../../images/check.png');
+  }
+}
+
+.triangle-icon-open {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    border: 8px solid rgba(0, 0, 0, 0);
+    border-top: 6px solid #53627B;
+  }
+}
+
+.triangle-icon-close {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    border: 8px solid rgba(0, 0, 0, 0);
+    border-bottom: 7px solid #53627B;
+  }
+
+}
+
+
+.filter {
+
+  &__select-app {
+    flex: 1;
+    width: 100%;
+  }
+
+  &__select-wrapp {
+    width: 100%;
+    max-width: 12rem;
+    margin-left: auto;
+  }
+
+}

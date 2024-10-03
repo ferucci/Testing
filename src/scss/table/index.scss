@@ -1,0 +1,58 @@
+$border-table-color: #E6E6E6;
+
+
+.result {
+  padding: 1.4rem 0 1.4rem 2rem;
+  background: $white;
+  border-radius: $border-radius;
+  overflow-x: auto;
+}
+
+table {
+  table-layout: fixed;
+  width: auto;
+  border-collapse: collapse;
+  border: none;
+  overflow-x: auto;
+
+  thead {
+    @extend %font;
+    font-size: .82rem;
+    color: $aside-dropdown-items-color;
+  }
+
+  thead th:nth-child(6) {
+    width: 10%;
+  }
+
+  thead th:nth-child(4) {
+    width: 10%;
+  }
+
+  thead th:nth-child(5) {
+    width: 20%;
+  }
+
+  tbody tr td,
+  th {
+    width: min(7rem, 5vw);
+    text-align: start;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  tbody tr td,
+  th {
+    padding: clamp(.8rem, 2vw, 1rem) .8rem clamp(.8rem, 2vw, 1rem) 0;
+    color: $main-color;
+  }
+
+  tbody tr:not(:last-child) {
+    border-bottom: 1px solid $border-table-color;
+  }
+
+  tbody button {
+    @include filter-button;
+  }
+}

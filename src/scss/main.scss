@@ -1,0 +1,31 @@
+@import 'reset';
+@import 'vars';
+@import 'mixins';
+@import 'global';
+
+@import 'sidebar/index.scss';
+@import 'header/index.scss';
+@import 'filter/index.scss';
+@import 'rev/index.scss';
+@import 'table/index.scss';
+@import 'select/index.scss';
+
+
+body {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  @extend %font;
+  font-weight: 400;
+  font-size: $base-font-size;
+  letter-spacing: .04rem;
+  line-height: 1.5;
+  padding: $main-padding;
+
+  background-color: $bgcolor;
+
+  @include ph {
+    background-color: #000;
+  }
+}
+
+@import 'media';
