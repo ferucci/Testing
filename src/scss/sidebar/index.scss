@@ -21,7 +21,6 @@ $sidebar-padding-bottom: 2rem;
     flex-direction: column;
     height: calc(100% - ($sidebar-padding-top + $sidebar-padding-bottom));
     justify-content: space-between;
-    overflow-y: auto;
 
     // @supports (scrollbar-gutter: stable) {
     //   scrollbar-gutter: stable;
@@ -62,15 +61,20 @@ $sidebar-padding-bottom: 2rem;
   &__link {
     display: flex;
     align-items: center;
+    position: relative;
 
     &.active {
       color: $aside-items-accent-color;
+
+      .arrow-down::after {
+        border-bottom-color: #3d5eb4;
+        transform: rotate(-180deg);
+      }
 
       .sidebar__link-inner {
         border-bottom: 1px solid #3d5eb4;
       }
 
-      .arrow-down,
       .sidebar__link-inner {
         svg path {
           stroke: #3d5eb4;
@@ -86,11 +90,23 @@ $sidebar-padding-bottom: 2rem;
   &__link-inner,
   .arrow-down {
     @include df-center;
-    padding-bottom: 0.5rem;
+    border-bottom: 1px solid transparent;
+    padding-bottom: .5rem;
   }
 
   .arrow-down {
     margin-left: auto;
+
+    &::after {
+      position: absolute;
+      content: "";
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-bottom: 8px solid $aside-items-color;
+      right: 0;
+      top: calc(50% - .5rem);
+      transform: rotate(-145deg);
+    }
   }
 
   .separator-text {
@@ -111,7 +127,7 @@ $sidebar-padding-bottom: 2rem;
       gap: .92rem;
       font-size: .77rem;
       letter-spacing: -.02rem;
-      padding: .7rem 0;
+      padding: .5rem 0 .7rem;
 
       max-height: 0;
       opacity: 0;
