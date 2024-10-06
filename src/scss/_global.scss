@@ -1,5 +1,5 @@
 body {
-  scrollbar-width: thin;
+  scrollbar-width: none;
   scrollbar-color: #000AFF transparent;
 }
 
@@ -10,7 +10,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background-color: #000AFF;
-  border-radius: 10px;
+  border-radius: .5rem;
 }
 
 ::-webkit-scrollbar-track {

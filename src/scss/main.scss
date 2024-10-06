@@ -24,7 +24,7 @@ body {
   background-color: $bgcolor;
 
   @include ph {
-    background-color: #000;
+    background-color: $white;
   }
 }
 

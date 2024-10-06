@@ -11,8 +11,7 @@
     border-radius: $border-radius;
 
     width: 100%;
-
-    padding: 1.7rem 2rem;
+    padding: clamp(.5rem, 2.5vw, 1.7rem) clamp(.7rem, 2.5vw, 2rem);
   }
 
 

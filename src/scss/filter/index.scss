@@ -3,11 +3,11 @@ $filter-button-color: #F1F4F8;
 .calendar {
   @include df-sb;
   background-color: $white;
-  padding: .57rem .77rem;
+  padding: $filter-padding-y $filter-padding-x;
   border-radius: $buttons-border-radius;
   color: $main-color;
   font-size: clamp(.64rem, 2vw, .8rem);
-  margin-bottom: 1.9rem;
+  margin: 0 0 1.9rem 0;
   white-space: nowrap;
   gap: 1rem;
   // overflow-x: hidden;

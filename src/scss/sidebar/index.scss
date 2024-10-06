@@ -9,7 +9,7 @@ $sidebar-padding-bottom: 2rem;
   color: $aside-items-color;
 
   padding: $sidebar-padding-top 1rem $sidebar-padding-bottom 1.13rem;
-  height: calc(min(100vmin, 100vmin) - $main-padding * 2);
+  min-height: calc(min(100vmin, 100vmin) - $main-padding * 2);
 
   a:active,
   a:hover {
@@ -21,6 +21,11 @@ $sidebar-padding-bottom: 2rem;
     flex-direction: column;
     height: calc(100% - ($sidebar-padding-top + $sidebar-padding-bottom));
     justify-content: space-between;
+    overflow-y: auto;
+
+    // @supports (scrollbar-gutter: stable) {
+    //   scrollbar-gutter: stable;
+    // }
   }
 
   &__item {

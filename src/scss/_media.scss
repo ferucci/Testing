@@ -2,6 +2,11 @@
   .rev {
     flex-wrap: wrap;
   }
+
+  .calendar {
+    margin-bottom: 1.22rem;
+    overflow: auto;
+  }
 }
 
 @media (max-width: 992px) {
@@ -9,10 +14,6 @@
     grid-template-columns: 1fr;
   }
 
-  .calendar {
-    margin-bottom: 1.22rem;
-    overflow: hidden;
-  }
 
   .rev {
     gap: 1rem;
