@@ -1,6 +1,6 @@
 $filter-button-color: #F1F4F8;
 
-.calendar {
+.filter {
   @include df-sb;
   background-color: $white;
   padding: $filter-padding-y $filter-padding-x;
@@ -10,20 +10,6 @@ $filter-button-color: #F1F4F8;
   margin: 0 0 1.9rem 0;
   white-space: nowrap;
   gap: 1rem;
-  // overflow-x: hidden;
-
-  button.prev,
-  button.next {
-    @include filter-button;
-    min-width: 2rem
-  }
-
-  button:not(.prev, .next) {
-    @include filter-button;
-    padding: $buttons-padding;
-    background: $filter-button-color;
-    border-radius: $buttons-border-radius;
-  }
 
   .date,
   .filter-buttons {
@@ -39,9 +25,53 @@ $filter-button-color: #F1F4F8;
     background-color: $filter-button-color;
   }
 
-  #number {
+  input#number {
+    border: none;
+    background: transparent;
+    height: 100%;
+    max-width: 8rem;
+
+    flex: 1;
+    text-align: center;
+
+    margin: 0 clamp(0.1rem, 2vw, .66rem);
     padding: $buttons-padding;
     border-left: 1px solid rgba(#788398, .24);
     border-right: 1px solid rgba(#788398, .24);
+
   }
+
+  button.prev,
+  button.next {
+    @include filter-button;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    min-width: 1.3rem;
+    height: 100%;
+    // padding: 1rem;
+  }
+
+  button.prev {
+    &::after {
+      left: 0;
+      right: auto;
+      transform: translate(50%, -50%) rotate(-90deg);
+    }
+  }
+
+  button.next {
+    &::after {
+      right: 0;
+      transform: translate(-50%, -50%) rotate(90deg);
+    }
+  }
+
+  button:not(.prev, .next) {
+    @include filter-button;
+    padding: $buttons-padding;
+    background: $filter-button-color;
+    border-radius: $buttons-border-radius;
+  }
+
 }

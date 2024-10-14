@@ -1,6 +1,6 @@
 export const Select = () => {
 
-  const checkList = document.getElementById('filter');
+  const checkList = document.getElementById('filter-select');
   const items = document.getElementById('items');
   const anchor = checkList.querySelector('.anchor');
 

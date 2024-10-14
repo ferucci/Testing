@@ -1,7 +1,14 @@
-import { Select } from "./module/select.js";
-import { toggleDropdown } from "./module/dropdown.js";
+import { Select } from "./module/filter-select.js";
+import { toggleDropdown } from "./module/aside-dropdown.js";
+import { changeDate } from "./module/filter-date.js";
+import { vars } from "./module/vars.js";
 
-const sidebarLink = document.querySelectorAll('.sidebar__item[data-dropdown] > .sidebar__link');
-toggleDropdown(sidebarLink);
+window.addEventListener("DOMContentLoaded", () => {
 
-Select()
+  const { sidebarLinks } = vars;
+
+  toggleDropdown(sidebarLinks);
+  changeDate()
+  Select()
+
+})

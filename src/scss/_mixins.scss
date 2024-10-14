@@ -45,4 +45,8 @@
   @include df-center;
   @include base-button;
   background: transparent;
+
+  &:hover {
+    background: rgba(transparent, .1);
+  }
 }

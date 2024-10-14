@@ -3,21 +3,21 @@
   position: relative;
   min-width: 13rem;
   user-select: none;
+  border: 1px solid rgba(148, 156, 172, .55);
+  border-radius: $buttons-border-radius;
 }
 
-.dropdown-check-list .anchor {
+.anchor {
   position: relative;
   display: inline-block;
   padding: .64rem;
 
   width: 100%;
 
-  border: 1px solid rgba(#949CAC, 55%);
-  border-radius: $buttons-border-radius;
   cursor: pointer;
 }
 
-.dropdown-check-list .anchor:after {
+.anchor:after {
   position: absolute;
   content: "";
   border-left: 7px solid transparent;
@@ -28,7 +28,7 @@
   transform: translateY(-50%) rotate(-180deg);
 }
 
-.dropdown-check-list .anchor:active:after {
+.anchor:active:after {
   transform: rotate(135deg);
 }
 

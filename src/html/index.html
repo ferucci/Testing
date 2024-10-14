@@ -316,35 +316,26 @@
             </svg>
             <span>Настройки</span>
           </a>
+
         </div>
       </div>
     </div>
   </aside>
-  <section class="main">
+  <main class="main">
     <div class="main__inner">
 
-      <article class="main__calendar calendar">
-        <!-- Для адаптации по макету нужен слайдер  -->
+      <!-- Для адаптации по макету реализовать слайдер  -->
+      <article class="main__filter filter">
         <div class="date">
           <!-- Переделать в нормальный вид! Должны быть кнопки кнопками, а инпут инпутом.  -->
           <div id="day">
-            <button class="prev" type="button">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M8.79983 13.5101L10.7698 15.4801L13.9798 18.6901C14.6598 19.3601 15.8198 18.8801 15.8198 17.9201L15.8198 11.6901L15.8198 6.08007C15.8198 5.12007 14.6598 4.64007 13.9798 5.32007L8.79983 10.5001C7.96983 11.3201 7.96983 12.6801 8.79983 13.5101Z"
-                  fill="#788398" />
-              </svg>
-            </button>
-            <span id="number">16 сентябрь</span>
-            <button class="next" type="button">
-              <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M12.0336 8.30453L10.474 6.74494L7.93274 4.20369C7.39441 3.67328 6.47607 4.05328 6.47607 4.81328V9.74536V14.1866C6.47607 14.9466 7.39441 15.3266 7.93274 14.7883L12.0336 10.6874C12.6907 10.0383 12.6907 8.96161 12.0336 8.30453Z"
-                  fill="#788398" />
-              </svg>
 
-            </button>
+            <button class="prev anchor" type="button"></button>
+            <input type="text" id="number" value="16 сентября" readonly />
+            <button class="next anchor" type="button"></button>
+
           </div>
+
           <div class="filter-buttons">
             <button type="button" id="today">Сегодня</button>
             <button type="button" id="yesterday">Вчера</button>
@@ -353,7 +344,7 @@
           </div>
         </div>
 
-        <div id="filter" class="dropdown-check-list" tabindex="100">
+        <div id="filter-select" class="dropdown-check-list" tabindex="100">
           <span class="anchor">Фильтры</span>
           <ul id="items" class="items">
             <li class="hidden__item">
@@ -395,7 +386,7 @@
 
       </article>
 
-      <div class="rev">
+      <section class="main__rev rev">
 
         <div class="rev__item income">
 
@@ -440,9 +431,9 @@
             <img src="./images/scale-exp.png" alt="scale">
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="result">
+      <section class="main__result result">
         <table class="result__table">
 
           <thead>
@@ -575,10 +566,10 @@
           </tbody>
 
         </table>
-      </div>
+      </section>
 
     </div>
-  </section>
+  </main>
 </body>
 
 </html>
