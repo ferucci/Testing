@@ -21,7 +21,6 @@ export const toggleDropdown = (currentLink) => {
         this.classList.remove('active');
       }
 
-      // Toggle the active class
       dropdown.classList.toggle('show');
     });
   });
