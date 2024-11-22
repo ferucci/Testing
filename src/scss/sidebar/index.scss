@@ -1,9 +1,10 @@
+@use '../vars' as vars;
 $subtitle: #99A5BB;
 $sidebar-padding-top: 1.56rem;
 $sidebar-padding-bottom: 2rem;
 
 .sidebar {
-  max-width: 17rem;
+  max-width: vars.$max-width-sidebar;
   border-radius: $border-radius;
   background-color: $white;
   color: $aside-items-color;

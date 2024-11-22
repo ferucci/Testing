@@ -394,10 +394,10 @@
             <h3 class="rev__title">Доходы</h3>
             <div class="rev__data">
               <p class="cash">
-                Наличные <span> 89 000₽ </span>
+                Наличные <span> 15 120₽ </span>
               </p>
               <p class="non-cash">
-                Безналичные <span> 58 000₽ </span>
+                Безналичные <span> 5 050₽ </span>
               </p>
             </div>
 
@@ -406,8 +406,7 @@
             </button>
           </div>
           <div class="rev__image">
-            <!-- Шкалу сделал картинкой, так как времени мне на это нужно больше -->
-            <img src="./images/scale.png" alt="scale">
+            <canvas id="income__output"></canvas>
           </div>
         </div>
 
@@ -416,10 +415,10 @@
             <h3 class="rev__title">Расходы</h3>
             <div class="rev__data">
               <p class="cash">
-                Наличные <span> 89 000₽ </span>
+                Наличные <span> 15 050₽ </span>
               </p>
               <p class="non-cash">
-                Безналичные <span> 58 000₽ </span>
+                Безналичные <span> 58 020₽ </span>
               </p>
             </div>
 
@@ -428,7 +427,7 @@
             </button>
           </div>
           <div class="rev__image">
-            <img src="./images/scale-exp.png" alt="scale">
+            <canvas id="expenses__output"></canvas>
           </div>
         </div>
       </section>
@@ -447,12 +446,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
+            <tr class="row">
               <td>Основная касса</td>
-              <td>Наличные</td>
-              <td>Продажи</td>
-              <td>2 765 </td>
-              <td>21.09.2024 21:01</td>
+              <td class="type">Наличные</td>
+              <td class="action">Продажи</td>
+              <td class="sum">2 765 </td>
+              <td class="date">21.09.2024 21:01</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -476,12 +475,12 @@
                 </button>
               </td>
             </tr>
-            <tr>
+            <tr class="row">
               <td>Расчетный счет</td>
-              <td>Безналичные</td>
-              <td>Покупка</td>
-              <td>5 098 </td>
-              <td>18.09.2024 12:09</td>
+              <td class="type">Безналичные</td>
+              <td class="action">Покупка</td>
+              <td class="sum">5 098 </td>
+              <td class="date">18.09.2024 12:09</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -505,12 +504,12 @@
                 </button>
               </td>
             </tr>
-            <tr>
+            <tr class="row">
               <td>Основная касса</td>
-              <td>Наличные</td>
-              <td>Продажи</td>
-              <td>1 400₽</td>
-              <td>16.09.2024 15:54</td>
+              <td class="type">Наличные</td>
+              <td class="action">Продажи</td>
+              <td class="sum">1 400₽</td>
+              <td class="date">16.09.2024 15:54</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -534,12 +533,12 @@
                 </button>
               </td>
             </tr>
-            <tr>
+            <tr class="row">
               <td>Расчетный счет</td>
-              <td>Безналичные</td>
-              <td>Покупка</td>
-              <td>3 760₽</td>
-              <td>15.09.2024 10:12</td>
+              <td class="type">Безналичные</td>
+              <td class="action">Покупка</td>
+              <td class="sum">3 760₽</td>
+              <td class="date">15.09.2024 10:12</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

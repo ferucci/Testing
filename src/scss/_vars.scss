@@ -1,4 +1,6 @@
 $base-font-size: clamp(.7rem, 2vw, .88rem);
+$max-width-sidebar: 17rem;
+$max-width-main-block: calc(170rem - $max-width-sidebar);
 
 $bgcolor: #F1F4F8;
 $aside-items-color: #53627B;
