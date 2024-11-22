@@ -16,7 +16,7 @@
   \************************/
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_filter_select_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/filter-select.js */ \"./src/js/module/filter-select.js\");\n/* harmony import */ var _module_aside_dropdown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/aside-dropdown.js */ \"./src/js/module/aside-dropdown.js\");\n/* harmony import */ var _module_filter_date_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/filter-date.js */ \"./src/js/module/filter-date.js\");\n/* harmony import */ var _module_vars_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./module/vars.js */ \"./src/js/module/vars.js\");\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener(\"DOMContentLoaded\", () => {\r\n\r\n  const { sidebarLinks } = _module_vars_js__WEBPACK_IMPORTED_MODULE_3__.vars;\r\n\r\n  (0,_module_aside_dropdown_js__WEBPACK_IMPORTED_MODULE_1__.toggleDropdown)(sidebarLinks);\r\n  (0,_module_filter_date_js__WEBPACK_IMPORTED_MODULE_2__.changeDate)()\r\n  ;(0,_module_filter_select_js__WEBPACK_IMPORTED_MODULE_0__.Select)()\r\n\r\n})\n\n//# sourceURL=webpack://onyx-project/./src/js/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _module_filter_filter_select_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./module/filter/filter-select.js */ \"./src/js/module/filter/filter-select.js\");\n/* harmony import */ var _module_aside_dropdown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./module/aside-dropdown.js */ \"./src/js/module/aside-dropdown.js\");\n/* harmony import */ var _module_filter_index_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./module/filter/index.js */ \"./src/js/module/filter/index.js\");\n/* harmony import */ var _module_vars_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./module/vars.js */ \"./src/js/module/vars.js\");\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener(\"DOMContentLoaded\", () => {\r\n\r\n  const { sidebarLinks } = _module_vars_js__WEBPACK_IMPORTED_MODULE_3__.vars;\r\n\r\n  (0,_module_aside_dropdown_js__WEBPACK_IMPORTED_MODULE_1__.toggleDropdown)(sidebarLinks);\r\n  (0,_module_filter_index_js__WEBPACK_IMPORTED_MODULE_2__.filterByDate)()\r\n  ;(0,_module_filter_filter_select_js__WEBPACK_IMPORTED_MODULE_0__.Select)()\r\n\r\n})\n\n//# sourceURL=webpack://onyx-project/./src/js/main.js?");
 
 /***/ }),
 
@@ -30,23 +30,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/js/module/filter-date.js":
-/*!**************************************!*\
-  !*** ./src/js/module/filter-date.js ***!
-  \**************************************/
+/***/ "./src/js/module/filter/filter-select.js":
+/*!***********************************************!*\
+  !*** ./src/js/module/filter/filter-select.js ***!
+  \***********************************************/
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   changeDate: function() { return /* binding */ changeDate; }\n/* harmony export */ });\nconst changeDate = () => {\r\n  const datePicker = document.getElementById(\"day\");\r\n\r\n  let currentDate = new Date();\r\n  currentDate.setMonth(currentDate.getMonth());\r\n\r\n  updateDisplayedDate(currentDate);\r\n\r\n  datePicker.querySelector('.prev').addEventListener('click', () => {\r\n    currentDate.setDate(currentDate.getDate() - 1);\r\n    updateDisplayedDate(currentDate);\r\n  });\r\n\r\n  datePicker.querySelector('.next').addEventListener('click', () => {\r\n    currentDate.setDate(currentDate.getDate() + 1);\r\n    updateDisplayedDate(currentDate);\r\n  });\r\n\r\n  function updateDisplayedDate(date) {\r\n    const formattedDate = formatDate(date);\r\n    datePicker.querySelector('input').value = formattedDate;\r\n  }\r\n\r\n  function formatDate(date) {\r\n    const day = date.getDate();\r\n    const month = date.toLocaleString('ru', { month: 'long' });\r\n    // const year = date.getFullYear();\r\n    return `${day} ${month}`;\r\n  }\r\n}\n\n//# sourceURL=webpack://onyx-project/./src/js/module/filter-date.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Select: function() { return /* binding */ Select; }\n/* harmony export */ });\nconst Select = () => {\r\n\r\n  const checkList = document.getElementById('filter-select');\r\n  const items = document.getElementById('items');\r\n  const anchor = checkList.querySelector('.anchor');\r\n\r\n  anchor.addEventListener('click', () => {\r\n    if (items.classList.contains('visible')) {\r\n      items.classList.remove('visible');\r\n      items.style.display = \"none\";\r\n    } else {\r\n      items.classList.add('visible');\r\n      items.style.display = \"block\";\r\n    }\r\n  })\r\n}\n\n//# sourceURL=webpack://onyx-project/./src/js/module/filter/filter-select.js?");
 
 /***/ }),
 
-/***/ "./src/js/module/filter-select.js":
-/*!****************************************!*\
-  !*** ./src/js/module/filter-select.js ***!
-  \****************************************/
+/***/ "./src/js/module/filter/index.js":
+/*!***************************************!*\
+  !*** ./src/js/module/filter/index.js ***!
+  \***************************************/
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   Select: function() { return /* binding */ Select; }\n/* harmony export */ });\nconst Select = () => {\r\n\r\n  const checkList = document.getElementById('filter-select');\r\n  const items = document.getElementById('items');\r\n  const anchor = checkList.querySelector('.anchor');\r\n\r\n  anchor.addEventListener('click', () => {\r\n    if (items.classList.contains('visible')) {\r\n      items.classList.remove('visible');\r\n      items.style.display = \"none\";\r\n    } else {\r\n      items.classList.add('visible');\r\n      items.style.display = \"block\";\r\n    }\r\n  })\r\n}\n\n//# sourceURL=webpack://onyx-project/./src/js/module/filter-select.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   filterByDate: function() { return /* binding */ filterByDate; }\n/* harmony export */ });\nconst filterByDate = () => {\r\n  const datePicker = document.getElementById(\"day\");\r\n\r\n  let currentDate = new Date();\r\n  currentDate.setMonth(currentDate.getMonth());\r\n\r\n  updateDisplayedDate(currentDate);\r\n\r\n  datePicker.querySelector('.prev').addEventListener('click', () => {\r\n    currentDate.setDate(currentDate.getDate() - 1);\r\n    updateDisplayedDate(currentDate);\r\n  });\r\n\r\n  datePicker.querySelector('.next').addEventListener('click', () => {\r\n    currentDate.setDate(currentDate.getDate() + 1);\r\n    updateDisplayedDate(currentDate);\r\n  });\r\n\r\n  function updateDisplayedDate(date) {\r\n    const formattedDate = formatDate(date);\r\n    datePicker.querySelector('input').value = formattedDate;\r\n  }\r\n\r\n  function formatDate(date) {\r\n    const day = date.getDate();\r\n    const month = date.toLocaleString('ru', { month: 'long' });\r\n    // const year = date.getFullYear();\r\n    return `${day} ${month}`;\r\n  }\r\n}\n\n//# sourceURL=webpack://onyx-project/./src/js/module/filter/index.js?");
 
 /***/ }),
 

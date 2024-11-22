@@ -1,4 +1,4 @@
-export const changeDate = () => {
+export const filterByDate = () => {
   const datePicker = document.getElementById("day");
 
   let currentDate = new Date();
