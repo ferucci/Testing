@@ -1,30 +1,39 @@
 export const filterByDate = () => {
+
   const datePicker = document.getElementById("day");
+  const table = document.querySelector('.result__table')
 
-  let currentDate = new Date();
-  currentDate.setMonth(currentDate.getMonth());
+  const changeDate = () => {
+    const datePicker = document.getElementById("day");
 
-  updateDisplayedDate(currentDate);
+    let currentDate = new Date();
+    currentDate.setMonth(currentDate.getMonth());
 
-  datePicker.querySelector('.prev').addEventListener('click', () => {
-    currentDate.setDate(currentDate.getDate() - 1);
     updateDisplayedDate(currentDate);
-  });
 
-  datePicker.querySelector('.next').addEventListener('click', () => {
-    currentDate.setDate(currentDate.getDate() + 1);
-    updateDisplayedDate(currentDate);
-  });
+    datePicker.querySelector('.prev').addEventListener('click', () => {
+      currentDate.setDate(currentDate.getDate() - 1);
+      updateDisplayedDate(currentDate);
+    });
 
-  function updateDisplayedDate(date) {
-    const formattedDate = formatDate(date);
-    datePicker.querySelector('input').value = formattedDate;
+    datePicker.querySelector('.next').addEventListener('click', () => {
+      currentDate.setDate(currentDate.getDate() + 1);
+      updateDisplayedDate(currentDate);
+    });
+
+    function updateDisplayedDate(date) {
+      const formattedDate = formatDate(date);
+      datePicker.querySelector('input').value = formattedDate;
+    }
+
+    function formatDate(date) {
+      const day = date.getDate();
+      const month = date.toLocaleString('ru', { month: 'long' });
+      // const year = date.getFullYear();
+      return `${day} ${month}`;
+    }
   }
 
-  function formatDate(date) {
-    const day = date.getDate();
-    const month = date.toLocaleString('ru', { month: 'long' });
-    // const year = date.getFullYear();
-    return `${day} ${month}`;
-  }
+  changeDate()
+
 }

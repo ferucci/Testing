@@ -1,3 +1,5 @@
+@use 'vars' as vars;
+
 body {
   scrollbar-width: none;
   scrollbar-color: #000AFF transparent;
@@ -27,6 +29,7 @@ body {
 
 .main {
   overflow: hidden;
+  max-width: vars.$max-width-main-block;
 
   &__inner {
     display: grid;
