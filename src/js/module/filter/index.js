@@ -48,6 +48,3 @@ export const filterByDate = () => {
   changeDate()
 
 }
-
-
-
