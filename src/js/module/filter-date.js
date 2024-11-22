@@ -3,7 +3,7 @@ export const changeDate = () => {
 
   let currentDate = new Date();
   currentDate.setMonth(currentDate.getMonth());
-  console.log(currentDate);
+
   updateDisplayedDate(currentDate);
 
   datePicker.querySelector('.prev').addEventListener('click', () => {
