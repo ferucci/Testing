@@ -36,7 +36,7 @@
 @mixin base-button {
   padding: 0;
   border: none;
-
+  background: transparent;
   cursor: pointer;
 }
 
@@ -44,7 +44,6 @@
 @mixin filter-button {
   @include df-center;
   @include base-button;
-  background: transparent;
 
   &:hover {
     background: rgba(transparent, .1);
