@@ -210,5 +210,4 @@ class DateFilter {
     };
   }
 }
-
 export default DateFilter;
