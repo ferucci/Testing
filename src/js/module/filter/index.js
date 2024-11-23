@@ -118,7 +118,7 @@ class DateFilter {
       .reduce((acc, item) => acc + item.value, 0);
   }
 
-  // Задаю общее количество и вывожу на экран
+  // общее количество и вывожу на экран
   setTotalAmountAndView(totalAmountsCash, totalAmountsNonCash, item) {
     const amountCash = item.box.querySelector('.cash > span');
     const amountNonCash = item.box.querySelector('.non-cash > span');
