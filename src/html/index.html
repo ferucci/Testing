@@ -330,9 +330,9 @@
           <!-- Переделать в нормальный вид! Должны быть кнопки кнопками, а инпут инпутом.  -->
           <div id="day">
 
-            <button class="prev anchor" type="button"></button>
-            <input type="text" id="number" value="16 сентября" readonly />
-            <button class="next anchor" type="button"></button>
+            <button class="prev date-switch" type="button"></button>
+            <input type="text" id="number" value="" readonly />
+            <button class="next date-switch" type="button"></button>
 
           </div>
 
@@ -418,7 +418,7 @@
                 Наличные <span> 15 050₽ </span>
               </p>
               <p class="non-cash">
-                Безналичные <span> 58 020₽ </span>
+                Безналичные <span> 68 020₽ </span>
               </p>
             </div>
 
@@ -448,10 +448,10 @@
           <tbody>
             <tr class="row">
               <td>Основная касса</td>
-              <td class="type">Наличные</td>
-              <td class="action">Продажи</td>
-              <td class="sum">2 765 </td>
-              <td class="date">21.09.2024 21:01</td>
+              <td class="type" data-type="cash">Наличные</td>
+              <td class="action" data-action="sale">Продажи</td>
+              <td class="sum">4 238₽</td>
+              <td class="date">22.11.2024 21:01</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -477,10 +477,10 @@
             </tr>
             <tr class="row">
               <td>Расчетный счет</td>
-              <td class="type">Безналичные</td>
-              <td class="action">Покупка</td>
-              <td class="sum">5 098 </td>
-              <td class="date">18.09.2024 12:09</td>
+              <td class="type" data-type="non-cash">Безналичные</td>
+              <td class="action" data-action="buy">Покупка</td>
+              <td class="sum">55 098₽</td>
+              <td class="date">18.10.2023 12:09</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -506,9 +506,9 @@
             </tr>
             <tr class="row">
               <td>Основная касса</td>
-              <td class="type">Наличные</td>
-              <td class="action">Продажи</td>
-              <td class="sum">1 400₽</td>
+              <td class="type" data-type="cash">Наличные</td>
+              <td class="action" data-action="sale">Продажи</td>
+              <td class="sum">31 400₽</td>
               <td class="date">16.09.2024 15:54</td>
               <td>
                 <button type="button">
@@ -534,11 +534,127 @@
               </td>
             </tr>
             <tr class="row">
+              <td>Основная касса</td>
+              <td class="type" data-type="non-cash">Безналичные</td>
+              <td class="action" data-action="sale">Продажи</td>
+              <td class="sum">9400₽</td>
+              <td class="date">123.11.2024 15:54</td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.41667 10.0833L2.75 13.7499L6.41667 17.4166" stroke="#2CB493" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.0833 4.58325H14.6667C17.198 4.58325 19.25 6.63528 19.25 9.16659C19.25 11.6979 17.198 13.7499 14.6667 13.7499H2.75"
+                      stroke="#2CB493" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.85731 6.41667V4.4C7.85731 3.96239 8.02287 3.54271 8.31757 3.23327C8.61227 2.92384 9.01197 2.75 9.42873 2.75H12.5716C12.9884 2.75 13.3881 2.92384 13.6828 3.23327C13.9775 3.54271 14.143 3.96239 14.143 4.4V6.41667M17.4168 6.41667L16.5002 17.6C16.5002 18.0376 16.3346 18.4573 16.0399 18.7667C15.7452 19.0762 15.3455 19.25 14.9287 19.25H7.07159C6.65482 19.25 6.25512 19.0762 5.96042 18.7667C5.66572 18.4573 5.50016 18.0376 5.50016 17.6L4.5835 6.41667H17.4168Z"
+                      stroke="#67748E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.6665 6.41675H5.29613H18.3332" stroke="#67748E" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="row">
               <td>Расчетный счет</td>
-              <td class="type">Безналичные</td>
-              <td class="action">Покупка</td>
-              <td class="sum">3 760₽</td>
-              <td class="date">15.09.2024 10:12</td>
+              <td class="type" data-type="non-cash">Безналичные</td>
+              <td class="action" data-action="buy">Покупка</td>
+              <td class="sum">33 760₽</td>
+              <td class="date">15.10.2024 10:12</td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.41667 10.0833L2.75 13.7499L6.41667 17.4166" stroke="#2CB493" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.0833 4.58325H14.6667C17.198 4.58325 19.25 6.63528 19.25 9.16659C19.25 11.6979 17.198 13.7499 14.6667 13.7499H2.75"
+                      stroke="#2CB493" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.85731 6.41667V4.4C7.85731 3.96239 8.02287 3.54271 8.31757 3.23327C8.61227 2.92384 9.01197 2.75 9.42873 2.75H12.5716C12.9884 2.75 13.3881 2.92384 13.6828 3.23327C13.9775 3.54271 14.143 3.96239 14.143 4.4V6.41667M17.4168 6.41667L16.5002 17.6C16.5002 18.0376 16.3346 18.4573 16.0399 18.7667C15.7452 19.0762 15.3455 19.25 14.9287 19.25H7.07159C6.65482 19.25 6.25512 19.0762 5.96042 18.7667C5.66572 18.4573 5.50016 18.0376 5.50016 17.6L4.5835 6.41667H17.4168Z"
+                      stroke="#67748E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.6665 6.41675H5.29613H18.3332" stroke="#67748E" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="row">
+              <td>Расчетный счет</td>
+              <td class="type" data-type="non-cash">Наличные</td>
+              <td class="action" data-action="buy">Покупка</td>
+              <td class="sum">37 555₽</td>
+              <td class="date">22.11.2024 19:12</td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.41667 10.0833L2.75 13.7499L6.41667 17.4166" stroke="#2CB493" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.0833 4.58325H14.6667C17.198 4.58325 19.25 6.63528 19.25 9.16659C19.25 11.6979 17.198 13.7499 14.6667 13.7499H2.75"
+                      stroke="#2CB493" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.85731 6.41667V4.4C7.85731 3.96239 8.02287 3.54271 8.31757 3.23327C8.61227 2.92384 9.01197 2.75 9.42873 2.75H12.5716C12.9884 2.75 13.3881 2.92384 13.6828 3.23327C13.9775 3.54271 14.143 3.96239 14.143 4.4V6.41667M17.4168 6.41667L16.5002 17.6C16.5002 18.0376 16.3346 18.4573 16.0399 18.7667C15.7452 19.0762 15.3455 19.25 14.9287 19.25H7.07159C6.65482 19.25 6.25512 19.0762 5.96042 18.7667C5.66572 18.4573 5.50016 18.0376 5.50016 17.6L4.5835 6.41667H17.4168Z"
+                      stroke="#67748E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.6665 6.41675H5.29613H18.3332" stroke="#67748E" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="row">
+              <td>Расчетный счет</td>
+              <td class="type" data-type="non-cash">Безналичные</td>
+              <td class="action" data-action="buy">Покупка</td>
+              <td class="sum">49 555₽</td>
+              <td class="date">23.11.2024 13:12</td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.41667 10.0833L2.75 13.7499L6.41667 17.4166" stroke="#2CB493" stroke-width="1.5"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M10.0833 4.58325H14.6667C17.198 4.58325 19.25 6.63528 19.25 9.16659C19.25 11.6979 17.198 13.7499 14.6667 13.7499H2.75"
+                      stroke="#2CB493" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+              <td>
+                <button type="button">
+                  <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M7.85731 6.41667V4.4C7.85731 3.96239 8.02287 3.54271 8.31757 3.23327C8.61227 2.92384 9.01197 2.75 9.42873 2.75H12.5716C12.9884 2.75 13.3881 2.92384 13.6828 3.23327C13.9775 3.54271 14.143 3.96239 14.143 4.4V6.41667M17.4168 6.41667L16.5002 17.6C16.5002 18.0376 16.3346 18.4573 16.0399 18.7667C15.7452 19.0762 15.3455 19.25 14.9287 19.25H7.07159C6.65482 19.25 6.25512 19.0762 5.96042 18.7667C5.66572 18.4573 5.50016 18.0376 5.50016 17.6L4.5835 6.41667H17.4168Z"
+                      stroke="#67748E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M3.6665 6.41675H5.29613H18.3332" stroke="#67748E" stroke-width="1.5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </td>
+            </tr>
+            <tr class="row">
+              <td>Расчетный счет</td>
+              <td class="type" data-type="cash">Безналичные</td>
+              <td class="action" data-action="buy">Покупка</td>
+              <td class="sum">59 257₽</td>
+              <td class="date">18.11.2024 11:12</td>
               <td>
                 <button type="button">
                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

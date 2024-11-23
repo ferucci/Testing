@@ -1,3 +1,5 @@
+import { reduceStringToNumber } from "../helpers.js";
+
 export class ExpensesAnim {
   constructor(options) {
     this.options = options
@@ -5,29 +7,33 @@ export class ExpensesAnim {
 
     if (!this.className) return;
 
-    this.init()
+    this.#init()
+    this.start()
   }
 
-  init() {
+  #init() {
     this.box = document.querySelector(`.${this.className}`)
     this.wrapper = this.box.querySelector('.rev__image')
 
     this.canvas = document.getElementById(`${this.className}__output`)
     this.ctx = this.canvas.getContext('2d')
 
-    this.grayColor = '#f0f4f7';
-    this.setSizes()
+    this.height = this.wrapper.getBoundingClientRect().height
+    this.width = this.wrapper.getBoundingClientRect().width
 
+    this.grayColor = '#f0f4f7';
+  }
+
+  start() {
+    this.setSizes()
     this.drawArc()
     this.updateDynamicArc()
   }
 
   setSizes() {
-    const width = this.wrapper.getBoundingClientRect().width
-    const height = this.wrapper.getBoundingClientRect().height
 
-    this.canvas.width = width
-    this.canvas.height = height
+    this.canvas.width = this.width
+    this.canvas.height = this.height
     this.currentAngle = Math.PI
     this.targetAngle = Math.PI * 2
 
@@ -80,18 +86,27 @@ export class ExpensesAnim {
     this.ctx.shadowOffsetY = 0
     this.ctx.shadowBlur = 0
   }
-  updateDynamicArc = () => {
+
+  getSumValues() {
     const amountCash = this.box.querySelector('.cash > span');
     const amountNonCash = this.box.querySelector('.non-cash > span');
-    const amountVal = parseFloat(amountCash.innerHTML.replace('₽', '').trim());
-    const amountNVal = parseFloat(amountNonCash.innerHTML.replace('₽', '').trim());
+    const amountVal = reduceStringToNumber(amountCash.textContent);
+    const amountNVal = reduceStringToNumber(amountNonCash.textContent);
     const amount = amountVal + amountNVal
+    return amount
+  }
+
+  updateDynamicArc = () => {
+    const maxValue = 200000;
+    const amount = this.getSumValues()
 
     if (!isNaN(amount)) {
       // Формула с расчётом на то, что максимальное число 100000
-      // Если число больше, тогда нужно увеличивать делитель
-      this.targetAngle = (1 + amount / 100) * Math.PI;
-
+      // Если max-число больше, тогда нужно увеличивать делитель
+      this.targetAngle = (1 + amount / maxValue) * Math.PI;
+      if (this.targetAngle >= Math.PI * 2) {
+        this.targetAngle = Math.PI * 2
+      }
       // Запуск анимации
       requestAnimationFrame(this.animateDynamicArc);
     } else {
